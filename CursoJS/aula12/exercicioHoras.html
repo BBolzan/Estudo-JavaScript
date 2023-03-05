@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario</title>
+</head>
+<body>
+    <h1>Que horas são agora?</h1>
+    Informe o horário: <input type="number" name="txhoras" id="txhoras">
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res1"></div>
+    <script>
+        function calcular() {
+            var horas1 = Number(window.document.querySelector("input#txhoras").value)
+            //var horaPc = new Date()
+            //var horas2 = horasPC.getHours()
+            var res1 = window.document.querySelector("div#res1")
+            // var res2 = window.document.querySelector("div#res2")
+            res1.innerHTML = `<p>Agora são <strong>${horas1}</strong></p>`
+            //res2.innerHTML = `<p>Agora são <strong>${horas}</strong></p>`
+            if(horas1<12) {
+                res1.innerHTML += "Bom dia!"
+                //res2.innerHTML += "Bom dia!"
+            }
+            if(horas1<18) {
+                res1.innerHTML += "Boa Tarde!"
+                //res2.innerHTML += "Boa Tarde!"
+            } else {
+                res1.innerHTML += "Boa Noite!"
+                //res2.innerHTML += "Boa Noite!"
+            }
+        }
+    </script> 
+</body>
+</html>
